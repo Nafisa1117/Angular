@@ -1,0 +1,43 @@
+/* counter.component.css */
+
+.counter {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  margin: 0 auto;
+}
+
+.counter h1 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.counter-value {
+  font-size: 3rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
