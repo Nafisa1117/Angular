@@ -1,17 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-item-list',
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.css']
 })
-export class ItemListComponent implements OnInit{
+export class ItemListComponent {
+  newItem: string = '';
+  items: string[] = ['Item 1', 'Item 2', 'Item 3'];
+  editingIndex: number = -1;
 
-  items= ['Buy  groceries', 'Finish homework', 'Call mom'];
+  addItem() {
+    if (this.newItem) {
+      this.items.push(this.newItem);
+      this.newItem = '';
+    }
+  }
 
-  constructor(){}
+  editItem(index: number) {
+    this.editingIndex = index;
+  }
 
-  ngOnInit():void{
+  saveItem(index: number) {
+    this.editingIndex = -1; // Exit edit mode
+  }
 
+  removeItem(index: number) {
+    this.items.splice(index, 1);
   }
 }
+
