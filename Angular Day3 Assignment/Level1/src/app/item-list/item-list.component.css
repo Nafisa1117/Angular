@@ -1,0 +1,37 @@
+/* item-list.component.css */
+/* item-list.component.css */
+
+/* Common styles for all items */
+.item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Styles for category filter */
+  #categoryFilter {
+    margin: 10px 0;
+  }
+  
+  /* Styles for the search input */
+  #search {
+    margin: 10px 0;
+  }
+  
+  /* Style the list */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Style list items */
+  li {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Additional custom styling as needed */
+  

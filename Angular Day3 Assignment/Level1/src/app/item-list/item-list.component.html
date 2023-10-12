@@ -1,0 +1,29 @@
+<!-- item-list.component.html -->
+
+<!-- Exercise 2: Creating the Item List Component -->
+<ul>
+    <li *ngFor="let item of items">
+      <div class="item">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <p>Price: {{ item.price | currency }}</p>
+      </div>
+    </li>
+  </ul>
+  
+  <!-- Exercise 6: Add Item Categories -->
+  <div>
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter" [(ngModel)]="selectedCategory" (change)="filterItemsByCategory()">
+      <option value="">All</option>
+      <option *ngFor="let category of uniqueCategories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+  
+  <!-- Exercise 7: Item Search -->
+  <div>
+    <label for="search">Search:</label>
+    <input type="text" id="search" [(ngModel)]="searchTerm" (input)="filterItemsBySearch()">
+  </div>
+  
+  

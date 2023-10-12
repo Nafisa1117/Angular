@@ -1,0 +1,66 @@
+<div class="item-list">
+    <h1>Item List</h1>
+  
+    <div class="filter">
+      <h2>Filter</h2>
+      <div class="filter-group">
+        <label for="category">Category:</label>
+        <select [(ngModel)]="newItem.category" name="category" #categoryInput>
+          <option value="All">All</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Furniture">Furniture</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="search">Search:</label>
+        <input
+          type="text"
+          placeholder="Search by name or description"
+          [(ngModel)]="searchText"
+          name="search"
+        />
+        <button (click)="applyFilter()">Apply Filter</button>
+      </div>
+    </div>
+  
+    <div class="pagination">
+      <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+      <span>{{ currentPage }} / {{ calculateTotalPages() }}</span>
+
+      <button
+        (click)="onPageChange(currentPage + 1)"
+        [disabled]="currentPage === (filteredItemCount / itemsPerPage)"
+
+      >
+        Next
+      </button>
+    </div>
+  
+    <ul>
+      <li *ngFor="let item of items">
+        <div class="item">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.description }}</p>
+          <p>Price: {{ item.price | currency }}</p>
+          <div class="rating">
+            <span
+              *ngFor="let _ of [].constructor(item.rating)"
+              (click)="onRateChange(item, item.rating - 1)"
+            >
+              <span class="star">&#9733;</span>
+            </span>
+            <span
+              *ngFor="let _ of [].constructor(5 - item.rating)"
+              (click)="onRateChange(item, item.rating + 1)"
+            >
+              <span class="star">&#9734;</span>
+            </span>
+            <p>Average Rating: {{ item.averageRating | number:'1.1-1' }}</p>
+          </div>
+          <button (click)="openConfirmationDialog(item)">Remove</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
