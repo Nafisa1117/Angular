@@ -1,0 +1,17 @@
+<h1>Routing in angular</h1>
+
+<div>
+  <a [routerLink]="['/home', 'content1']">Link 1</a>
+  <br>
+  <a [routerLink]="['/home', 'content2']">Link 2</a>
+</div>
+
+
+<hr>
+<div>
+  <a [routerLink]="['/products', 'electronics', '123']">Electronics Product</a>
+<br>
+  <a [routerLink]="['/products', 'clothing', '456']">Clothing Product</a>
+</div>
+
+<router-outlet></router-outlet>
