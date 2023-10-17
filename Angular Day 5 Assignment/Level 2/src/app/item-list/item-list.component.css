@@ -1,0 +1,80 @@
+h2{
+  color: #0056b3;
+  text-align: center;
+}
+
+/* Styling for the form container */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  /* border: 1px solid #dccbcb; */
+  border-radius: 5px;
+  background-color: #d8f6b1;
+}
+
+/* Styling for form elements */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #007bff;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Error message styling */
+.error {
+  color: #ff0000;
+  font-size: 14px;
+}
+
+/* Styling for the submit button */
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the list of added items */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #beeff1;
+}
+
+/* Styling for item details */
+p {
+  margin: 5px 0;
+}
+
+/* Additional styling for headings */
+h2 {
+  margin-top: 20px;
+}

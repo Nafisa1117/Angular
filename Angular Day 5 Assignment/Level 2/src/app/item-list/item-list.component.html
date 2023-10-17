@@ -1,0 +1,40 @@
+<h2>Add New Item</h2>
+<hr>
+<form (ngSubmit)="addItem()">
+  <div class="form-group">
+    <label for="itemName">Item Name:</label>
+    <input type="text" id="itemName" name="itemName" [(ngModel)]="newItemName" required pattern="^[a-zA-Z]{2,}$">
+    <div *ngIf="!newItemName && formSubmitted" class="error">Item Name is required.</div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="itemDescription">Description:</label>
+    <textarea id="itemDescription" name="itemDescription" [(ngModel)]="newItemDescription" required maxlength="200"></textarea>
+    <div *ngIf="newItemDescription && newItemDescription.length > 200" class="error">Description should not exceed 200 characters.</div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="itemPrice">Price:</label>
+    <input type="number" id="itemPrice" name="itemPrice" [(ngModel)]="newItemPrice" required min="0" max="1000">
+    <div *ngIf="(newItemPrice < 0) || (newItemPrice > 1000)" class="error">Price should be between 0 and 1000.</div>
+  </div>
+
+
+  <hr>
+  <button type="submit">Add Item</button>
+</form>
+
+<hr>
+<hr>
+
+<h2>Added Items</h2>
+<hr>
+<ul>
+  <li *ngFor="let item of items">
+    <p><strong>Name:</strong> {{ item.name }}</p>
+    <p><strong>Description:</strong> {{ item.description }}</p>
+    <p><strong>Price:</strong> {{ item.price | currency:'USD' }}</p>
+  </li>
+</ul>

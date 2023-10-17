@@ -1,0 +1,31 @@
+<h2>Add New Item</h2>
+<form (ngSubmit)="addItem()">
+  <div class="form-group">
+    <label for="itemName">Item Name:</label>
+    <input type="text" id="itemName" name="itemName" [(ngModel)]="newItemName" required>
+    <div *ngIf="!newItemName && formSubmitted" class="error">Item Name is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="itemDescription">Description:</label>
+    <textarea id="itemDescription" name="itemDescription" [(ngModel)]="newItemDescription" required></textarea>
+    <div *ngIf="!newItemDescription && formSubmitted" class="error">Description is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="itemPrice">Price:</label>
+    <input type="number" id="itemPrice" name="itemPrice" [(ngModel)]="newItemPrice" required>
+    <div *ngIf="!newItemPrice && formSubmitted" class="error">Price is required.</div>
+  </div>
+
+  <button type="submit">Add Item</button>
+</form>
+
+<h2>Added Items</h2>
+<ul>
+  <li *ngFor="let item of items">
+    <p><strong>Name:</strong> {{ item.name }}</p>
+    <p><strong>Description:</strong> {{ item.description }}</p>
+    <p><strong>Price:</strong> {{ item.price | currency:'USD' }}</p>
+  </li>
+</ul>
